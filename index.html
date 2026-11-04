@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generador de cartel constructivista</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Cartel constructivista</h1>
+    <p class="intro">
+      Escribe un eslogan. El generador lo compone con reglas inspiradas en El Lissitzky
+      y Rodchenko (1919–25): diagonal, cuña roja, banda negra y tipografía sans en mayúsculas.
+    </p>
+
+    <form id="controls" onsubmit="return false">
+      <label>
+        Eslogan
+        <input id="slogan" type="text" value="Cuña roja contra el caos" maxlength="80" autocomplete="off">
+      </label>
+      <label>
+        Ángulo <output id="angle-out" for="angle"></output>
+        <input id="angle" type="range" step="1">
+      </label>
+      <label>
+        Semilla
+        <input id="seed" type="number" min="1" value="1">
+      </label>
+      <div class="buttons">
+        <button type="button" id="shuffle">Otra variante</button>
+        <button type="button" id="download" disabled>Descargar SVG</button>
+      </div>
+    </form>
+
+    <p id="error" role="alert"></p>
+    <section id="preview" aria-label="Vista previa del cartel"></section>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
